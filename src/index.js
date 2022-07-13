@@ -37,6 +37,8 @@ client.on('ready', async () => {
 });
 
 client.on('messageCreate', async message => {
+    if (!message.guild) return;
+    
     if (message.guild.id === SERVER_ID) {
 
         if (message.author.id === ANIGAME_ID && message.embeds.length > 0) {
